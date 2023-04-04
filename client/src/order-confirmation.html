@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="favicon.ico" rel="icon" type="image/ico"/>
+    <title>Mars 03: Atium Robots</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/order-confirmation.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/%22%3E" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com/" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&family=JetBrains+Mono&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.8.1/build/ol.js"></script>
+    <link href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.1.1/css/ol.css" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <section>
+        <span class="material-icons-round icon-l" id="back-btn">arrow_back</span>
+        <h1>Atium Robots</h1>
+        <span class="material-icons-round icon-l" id="menu-btn">menu</span>
+    </section>
+</header>
+<main>
+    <header>
+        <h2>Confirm Order</h2>
+        <p>Est. waiting time: &#60; 1 min</p>
+    </header>
+    <div class="map" id="order-summary-map">
+        <!-- Map goes here -->
+    </div>
+    <section id="order-summary">
+        <div class="summary-card">
+            <h2>Order summary</h2>
+            <ul>
+                <!-- Order summary items go here -->
+            </ul>
+            <div class="fare" id="estimated-fare">
+                <p>
+                    <strong>Estimated fare</strong>
+                    <strong>
+                        <small>MC</small>
+                        <span id="fare">0.00</span>
+                    </strong>
+                </p>
+            </div>
+            <small>Payment will be made automatically through mID at the
+                end of the trip.</small>
+            <button class="text-btn cancel-btn">Cancel order</button>
+        </div>
+    </section>
+    <button id="order">Order now</button>
+</main>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/order-confirmation.js"></script>
+</body>
+</html>

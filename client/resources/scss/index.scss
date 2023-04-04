@@ -1,0 +1,29 @@
+@use 'global' as g;
+
+main {
+  grid-template-rows: 1fr auto;
+
+  padding: g.$spacing-s;
+
+  nav {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: g.$spacing-s;
+
+    a.btn {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: g.$spacing-s;
+
+      img {
+        border-radius: g.$bdr-rad;
+        width: 100%;
+      }
+
+      div {
+        @include g.row-flexbox();
+        font-size: g.$font-size-m;
+      }
+    }
+  }
+}

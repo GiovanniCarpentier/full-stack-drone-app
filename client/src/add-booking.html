@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="favicon.ico" rel="icon" type="image/ico"/>
+    <title>Mars 03: Atium Robots</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/booking.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/%22%3E" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com/" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.8.1/build/ol.js"></script>
+    <link href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.1.1/css/ol.css" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <section>
+        <span class="material-icons-round icon-l" id="back-btn">arrow_back</span>
+        <h1>Atium Robots</h1>
+        <span class="material-icons-round icon-l" id="menu-btn">menu</span>
+    </section>
+</header>
+<main>
+    <h2>New Booking</h2>
+    <form action="#" id="add-booking-form">
+        <label class="hidden" for="datetime"></label>
+        <input id="datetime" type="datetime-local">
+        <label class="hidden" for="pickup-location"></label>
+        <select id="pickup-location">
+            <option value="">My Location</option>
+            <option value="358675.4587630894, 6658368.084396245">Geldmuntstraat, Bruges</option>
+            <option value="412111.96293521195, 6630848.932199352">Vlasgaardstraat, Ghent</option>
+            <option value="363801.7613843359, 6589491.823952369">Loofstraat, Kortrijk</option>
+            <option value="372643.7043690837, 6647050.968350218">Hoornstraat, Beernem</option>
+        </select>
+        <label class="hidden" for="destination"></label>
+        <select id="destination">
+            <option disabled selected value>Select a destination</option>
+            <option value="359459.35399325925, 6648348.428536918">Molenstraat, Oostkamp</option>
+            <option value="358675.4587630894, 6658368.084396245">Geldmuntstraat, Bruges</option>
+            <option value="412111.96293521195, 6630848.932199352">Vlasgaardstraat, Ghent</option>
+            <option value="363801.7613843359, 6589491.823952369">Loofstraat, Kortrijk</option>
+            <option value="372643.7043690837, 6647050.968350218">Hoornstraat, Beernem</option>
+        </select>
+        <div class="form-container fare expanded" id="estimated-fare">
+            <p>
+                <strong><span>Estimated fare</span></strong>
+                <strong>
+                    <small>MC</small>
+                    <span id="fare">0.00</span>
+                </strong>
+            </p>
+            <ul class="fare-calculation">
+                <li><span>Drop charge</span><span>3.00</span></li>
+                <li><span>Distance (est. <span id="distance">0.0</span> km)</span><span id="distance-charge">0.00</span>
+                </li>
+                <li><span>Duration (est. <span id="duration">0.0</span> min)</span><span
+                        id="duration-charge">0.00</span></li>
+            </ul>
+        </div>
+        <input type="submit" value="Confirm Booking">
+    </form>
+</main>
+<script src="assets/js/add-booking.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+@use 'global' as g;
+
+@media (min-width: 600px) {
+  body > header {
+    z-index: 5;
+    background-color: g.$color-primary;
+
+    &:after {
+      content: "Your device is not supported, please use your phone";
+      display: block;
+      text-align: center;
+      padding-top: 25%;
+    }
+  }
+}
+
+body {
+  @include g.font-stack();
+
+  height: 100vh;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: g.$spacing-m;
+
+  background-color: g.$color-quaternary;
+
+  a {
+    color: g.$font-color;
+    text-decoration: none;
+
+    &.btn {
+      @include g.container();
+
+      color: white;
+      background-color: g.$color-primary;
+    }
+  }
+
+  > header {
+    ul, div {
+      display: none;
+    }
+  }
+
+  div.summary-card {
+    @include g.card();
+
+    display: flex;
+    flex-direction: column;
+    gap: g.$spacing-s;
+
+    font-family: g.$font-family-mono;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  > header {
+    padding: g.$spacing-m;
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+
+      span:last-child {
+        justify-self: end;
+      }
+    }
+
+    &.expanded {
+      display: grid;
+      grid-template-rows: auto 1fr 1fr;
+
+      height: auto !important;
+      background-color: rgba(g.$color-primary, 0.95) !important;
+      z-index: 2;
+
+      div {
+        @include g.centered-flexbox(g.$spacing-s);
+
+        a {
+          font-size: g.$font-size-m;
+          text-decoration: underline;
+        }
+      }
+
+      nav {
+        height: 100%;
+
+        ul {
+          display: grid;
+          grid-template-columns: 1fr;
+
+          margin: g.$spacing-s;
+          text-align: center;
+
+          li {
+            font-size: g.$font-size-m;
+
+            &:not(:last-child) {
+              border-bottom: g.$bdr-alt;
+            }
+
+            a {
+              display: block;
+              padding: g.$spacing-l;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > header, main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  main {
+    display: grid;
+
+    header {
+      @include g.centered-flexbox();
+    }
+  }
+
+  h1 {
+    font-size: g.$font-size-l;
+    font-family: g.$font-family-alt;
+  }
+
+  h2 {
+    font-size: g.$font-size-m;
+  }
+
+  small {
+    font-size: g.$font-size-s;
+    color: grey;
+  }
+
+  button.text-btn {
+    @include g.font-stack();
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  section.modal {
+    @include g.centered-flexbox();
+    grid-column: 1;
+    grid-row: 1;
+
+    background-color: rgba(g.$color-primary, 0.95);
+    padding: g.$spacing-m;
+    text-align: center;
+    z-index: 3;
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+    }
+
+    div {
+      @include g.card();
+      @include g.centered-flexbox(g.$spacing-s);
+
+      button.text-btn {
+        color: g.$font-color-alt;
+      }
+
+      video, canvas {
+        width: 100%;
+        border-radius: g.$bdr-rad;
+      }
+    }
+  }
+
+  div.fare {
+    @include g.column-flexbox(g.$spacing-s);
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      strong:first-child {
+        display: flex;
+        align-items: center;
+
+        span:first-child {
+          margin-right: g.$spacing-s;
+        }
+      }
+    }
+
+    ul.fare-calculation {
+      display: none;
+    }
+
+    &.expanded {
+      ul.fare-calculation {
+        @include g.column-flexbox(g.$spacing-s);
+
+        li {
+          @include g.row-flexbox();
+        }
+      }
+    }
+  }
+
+  button.cancel-btn {
+    color: g.$color-danger;
+    align-self: flex-end;
+  }
+
+  span.material-icons-round.icon-l {
+    font-size: g.$spacing-l;
+  }
+
+  input, button, select {
+    @include g.bdr();
+
+    border-radius: g.$bdr-rad;
+    font-size: g.$font-size-m;
+    padding: g.$spacing-s;
+    outline: none;
+  }
+
+  input.active {
+    background-color: g.$color-accent !important;
+  }
+
+  input[type=submit], button {
+    background-color: g.$color-primary;
+    color: g.$font-color;
+    border: none;
+  }
+
+  input[type=search].location {
+    padding-left: 3rem;
+    background: g.$color-tertiary url("../images/map-marker.svg") no-repeat g.$spacing-s center;
+    background-size: g.$spacing-ml;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: g.$spacing-xs;
+
+    div.form-container {
+      @include g.card();
+    }
+  }
+
+  button {
+    background-color: g.$color-primary;
+    color: g.$font-color;
+  }
+
+  .hidden {
+    display: none;
+  }
+}

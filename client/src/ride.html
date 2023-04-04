@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+    <link href="favicon.ico" rel="icon" type="image/ico"/>
+    <title>Mars 03: Atium Robots</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/map-page.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/%22%3E" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com/" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.8.1/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.2/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.9.4/vertx-eventbus.min.js"></script>
+
+    <link href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.1.1/css/ol.css" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <section>
+        <a href="index.html"><span class="material-icons-round icon-l">home</span></a>
+        <h1>Atium Robots</h1>
+        <span class="material-icons-round icon-l" id="menu-btn">menu</span>
+    </section>
+</header>
+<main>
+    <div class="map" id="ride-map">
+        <!-- Map goes here -->
+    </div>
+    <form action="#" id="ride-form" method="post">
+        <button class="icon-btn" id="vibration-mock-button">
+            <span class="material-icons-round">vibration</span>
+        </button>
+        <div class="form-container">
+            <h2>Drone Ordered!</h2>
+            <small>You will get notified when the drone arrives</small>
+            <p>Estimated time of arrival: &#60; 1 min</p>
+        </div>
+        <input type="submit" value="Cancel Order">
+    </form>
+</main>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/ride.js"></script>
+<script src="assets/js/image-capture.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/vertx-connection.js"></script>
+</body>

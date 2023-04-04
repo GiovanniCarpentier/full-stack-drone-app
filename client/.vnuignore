@@ -1,0 +1,4 @@
+# Exclude input type date from the HTML validator (spaces around "date" are important)
+The .* date .* input type .*
+# Exclude input type datetime-local from the HTML validator
+The .*datetime-local.* input type .*

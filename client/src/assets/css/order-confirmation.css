@@ -1,0 +1,18 @@
+main {
+    grid-template-rows: auto 1fr auto auto;
+    gap: 0.75rem;
+    margin-top: 4rem;
+    padding: 0.75rem;
+}
+
+main .map {
+    pointer-events: none;
+}
+
+main section#order-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/*# sourceMappingURL=order-confirmation.css.map */

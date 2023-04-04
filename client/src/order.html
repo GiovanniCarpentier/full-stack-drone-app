@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+    <link href="favicon.ico" rel="icon" type="image/ico"/>
+    <title>Mars 03: Atium Robots</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/map-page.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/%22%3E" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com/" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.8.1/build/ol.js"></script>
+    <link href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.1.1/css/ol.css" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <section>
+        <a href="index.html"><span class="material-icons-round icon-l">home</span></a>
+        <h1>Atium Robots</h1>
+        <span class="material-icons-round icon-l" id="menu-btn">menu</span>
+    </section>
+</header>
+<main>
+    <div class="map" id="order-map">
+        <!-- Map goes here -->
+    </div>
+    <form action="#" id="order-form" method="post">
+        <label class="hidden" for="pickup-location"></label>
+        <input autofocus class="active location" id="pickup-location"
+               name="pickup-location" placeholder="Pick-up location" type="search">
+        <label class="hidden" for="destination"></label>
+        <input class="location" id="destination" name="destination" placeholder="Destination" type="search">
+        <div class="form-container fare" id="estimated-fare">
+            <p>
+                <strong><span class="material-icons-round">chevron_right</span><span>Estimated fare</span></strong>
+                <strong>
+                    <small>MC</small>
+                    <span id="fare">0.00</span>
+                </strong>
+            </p>
+            <ul class="fare-calculation">
+                <li><span>Drop charge</span><span>3.00</span></li>
+                <li><span>Distance (est. <span id="distance">0.0</span> km)</span><span id="distance-charge">0.00</span>
+                </li>
+                <li><span>Duration (est. <span id="duration">0.0</span> min)</span><span
+                        id="duration-charge">0.00</span></li>
+            </ul>
+        </div>
+        <input type="submit" value="Order now with mID">
+    </form>
+</main>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/order.js"></script>
+<script src="assets/js/api.js"></script>
+</body>

@@ -1,0 +1,39 @@
+@use 'global' as g;
+
+body {
+  gap: 0;
+
+  > header {
+    z-index: 2;
+    background-color: rgba(g.$color-primary, 0.75);
+    height: max-content;
+  }
+
+  main {
+    .map, form {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    form {
+      align-self: end;
+      z-index: 1;
+      padding: g.$spacing-s;
+
+      button.icon-btn {
+        border-radius: g.$bdr-rad;
+        background-color: g.$color-primary;
+
+        align-self: flex-start;
+
+        display: flex;
+        align-items: center;
+      }
+
+      .form-container:not(.fare) {
+        @include g.centered-flexbox(g.$spacing-s);
+        text-align: center;
+      }
+    }
+  }
+}

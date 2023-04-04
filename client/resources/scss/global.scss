@@ -1,0 +1,75 @@
+$font-family: 'Ubuntu', sans-serif;
+$font-family-alt: 'Montserrat', sans-serif;
+$font-family-mono: 'JetBrains Mono', monospace;
+
+$font-size: 16px;
+$font-size-s: 0.75rem;
+$font-size-m: 1.25rem;
+$font-size-l: 1.75rem;
+
+$font-color: #F5EDF0;
+$font-color-alt: #22252B;
+
+$color-primary: #2A2D34;
+$color-secondary: #2A2D34;
+$color-tertiary: #F5EDF0;
+$color-quaternary: #22252B;
+
+$color-accent: #B4CDED; //#B7E3CC;
+$color-danger: #C14953;
+
+$spacing-xs: 0.5rem;
+$spacing-s: 0.75rem;
+$spacing-m: 1rem;
+$spacing-ml: 1.5rem;
+$spacing-l: 2rem;
+$spacing-xl: 4rem;
+
+$bdr-rad: $spacing-xs;
+$bdr: $color-primary 0.125rem solid;
+$bdr-alt: $font-color 0.125rem solid;
+
+@mixin font-stack {
+  color: $font-color;
+  font-size: $font-size;
+  font-family: $font-family;
+}
+
+@mixin container {
+  border-radius: $bdr-rad;
+  padding: $spacing-s;
+}
+
+@mixin card {
+  @include bdr();
+
+  color: $font-color-alt;
+  background-color: $color-tertiary;
+  border-radius: $bdr-rad;
+  padding: $spacing-s;
+}
+
+@mixin centered-flexbox($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin column-flexbox($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin row-flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin bdr($color: $color-primary) {
+  border: $color 0.125rem solid;
+}

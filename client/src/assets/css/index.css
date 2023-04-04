@@ -1,0 +1,31 @@
+main {
+    grid-template-rows: 1fr auto;
+    padding: 0.75rem;
+}
+
+main nav {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.75rem;
+}
+
+main nav a.btn {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 0.75rem;
+}
+
+main nav a.btn img {
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+main nav a.btn div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+/*# sourceMappingURL=index.css.map */

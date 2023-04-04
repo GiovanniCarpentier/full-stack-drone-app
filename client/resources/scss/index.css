@@ -1,0 +1,309 @@
+body {
+  color: #F5EDF0;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  background-color: #22252B;
+}
+body > header, body main {
+  grid-column: 1;
+  grid-row: 1;
+}
+body main {
+  display: grid;
+}
+body main header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+body#order-page, body#ride-page {
+  gap: 0;
+}
+body#order-page > header, body#ride-page > header {
+  z-index: 2;
+  background-color: rgba(42, 45, 52, 0.75);
+  height: max-content;
+}
+body#order-page main .map, body#order-page main form, body#ride-page main .map, body#ride-page main form {
+  grid-column: 1;
+  grid-row: 1;
+}
+body#order-page main form, body#ride-page main form {
+  align-self: end;
+  z-index: 1;
+  padding: 0.75rem;
+}
+body#order-page main form .form-container:not(.fare), body#ride-page main form .form-container:not(.fare) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+body#order-confirmation-page main {
+  grid-template-rows: auto 1fr auto auto;
+  gap: 0.75rem;
+  margin-top: 4rem;
+  padding: 0.75rem;
+}
+body#order-confirmation-page main .map {
+  pointer-events: none;
+}
+body#order-confirmation-page main section#order-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+body#booking-page main, body#add-booking-page main {
+  grid-template-rows: auto 1fr;
+  gap: 0.75rem;
+  margin-top: 4rem;
+  padding: 0.75rem;
+}
+body#booking-page main a.btn, body#add-booking-page main a.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body > header {
+  padding: 1rem;
+}
+body > header section {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+body > header section span:last-child {
+  justify-self: end;
+}
+body > header ul, body > header div {
+  display: none;
+}
+body > header.expanded {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  height: auto !important;
+  background-color: rgba(42, 45, 52, 0.95) !important;
+  z-index: 2;
+}
+body > header.expanded nav {
+  height: 100%;
+}
+body > header.expanded nav ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0.75rem;
+  text-align: center;
+}
+body > header.expanded nav ul li {
+  font-size: 1.25rem;
+}
+body > header.expanded nav ul li:not(:last-child) {
+  border-bottom: #F5EDF0 0.125rem solid;
+}
+body > header.expanded nav ul li a {
+  display: block;
+  padding: 2rem;
+}
+body > header.expanded div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+body > header.expanded div a {
+  font-size: 1.25rem;
+  text-decoration: underline;
+}
+body h1 {
+  font-size: 1.75rem;
+  font-family: "Montserrat", sans-serif;
+}
+body h2 {
+  font-size: 1.25rem;
+}
+body small {
+  font-size: 0.75rem;
+  color: grey;
+}
+body a {
+  color: #F5EDF0;
+  text-decoration: none;
+}
+body a.btn {
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: white;
+  background-color: #2A2D34;
+}
+body section.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  grid-column: 1;
+  grid-row: 1;
+  background-color: rgba(42, 45, 52, 0.95);
+  padding: 1rem;
+  text-align: center;
+  z-index: 3;
+}
+body section.modal div {
+  border: #2A2D34 0.125rem solid;
+  color: #22252B;
+  background-color: #F5EDF0;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+body section.modal div button.text-btn {
+  color: #22252B;
+}
+body div.summary-card {
+  border: #2A2D34 0.125rem solid;
+  color: #22252B;
+  background-color: #F5EDF0;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: "JetBrains Mono", monospace;
+}
+body div.summary-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+body div.summary-card ul li {
+  display: flex;
+  justify-content: space-between;
+}
+body div.fare {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+body div.fare p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body div.fare p strong:first-child {
+  display: flex;
+  align-items: center;
+}
+body div.fare p strong:first-child span:first-child {
+  margin-right: 0.75rem;
+}
+body div.fare ul.fare-calculation {
+  display: none;
+}
+body div.fare.expanded ul.fare-calculation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+body div.fare.expanded ul.fare-calculation li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body button.text-btn {
+  color: #F5EDF0;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  padding: 0;
+  border: none;
+  background: none;
+}
+body button.cancel-btn {
+  color: #C14953;
+  align-self: flex-end;
+}
+body span.material-icons-round.icon-l {
+  font-size: 2rem;
+}
+body input, body button, body select {
+  border: #2A2D34 0.125rem solid;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  outline: none;
+}
+body input.active {
+  background-color: #B4CDED !important;
+}
+body input[type=submit], body button {
+  background-color: #2A2D34;
+  color: #F5EDF0;
+  border: none;
+}
+body input[type=search].location {
+  padding-left: 3rem;
+  background: #F5EDF0 url("../../src/assets/images/map-marker.svg") no-repeat 0.75rem center;
+  background-size: 1.5rem;
+}
+body form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+body form div.form-container {
+  border: #2A2D34 0.125rem solid;
+  color: #22252B;
+  background-color: #F5EDF0;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+body button {
+  background-color: #2A2D34;
+  color: #F5EDF0;
+}
+body .hidden {
+  display: none;
+}
+
+main {
+  grid-template-rows: 1fr auto;
+  padding: 0.75rem;
+}
+main nav {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.75rem;
+}
+main nav a.btn {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 0.75rem;
+}
+main nav a.btn img {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+main nav a.btn div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+/*# sourceMappingURL=index.css.map */

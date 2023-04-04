@@ -1,0 +1,17 @@
+@use 'global' as g;
+
+main {
+  grid-template-rows: auto 1fr auto auto;
+  gap: g.$spacing-s;
+
+  margin-top: g.$spacing-xl;
+  padding: g.$spacing-s;
+
+  .map {
+    pointer-events: none;
+  }
+
+  section#order-summary {
+    @include g.column-flexbox(g.$spacing-s);
+  }
+}
